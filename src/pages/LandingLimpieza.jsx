@@ -495,22 +495,19 @@ export function LandingLimpieza() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-sky-300 transition-all shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center mb-5 text-2xl font-black shadow-inner">⚡</div>
-              <h4 className="text-lg font-bold text-slate-900 mb-2">1. Punto de Electricidad</h4>
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4"><div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-xl sm:text-2xl font-black shadow-inner">⚡</div><h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">1. Punto de Electricidad</h4></div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Contar con una toma eléctrica cercana y funcional disponible (110V o 220V) para conectar nuestras bombas de achique, hidrolavadoras y extractores de lodos.
               </p>
             </div>
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-sky-300 transition-all shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center mb-5 text-2xl font-black shadow-inner">💧</div>
-              <h4 className="text-lg font-bold text-slate-900 mb-2">2. Reserva de Agua (500 L)</h4>
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4"><div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center shrink-0 text-xl sm:text-2xl font-black shadow-inner">💧</div><h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">2. Reserva de Agua (500 L)</h4></div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Dejar un aproximado de por lo menos 500 litros de agua en el fondo del tanque, los cuales extraeremos con nuestros equipos para el proceso de lavado, cepillado y extracción de sedimentos.
               </p>
             </div>
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-sky-300 transition-all shadow-sm hover:shadow-md">
-              <div className="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center mb-5 text-2xl font-black shadow-inner">🚰</div>
-              <h4 className="text-lg font-bold text-slate-900 mb-2">3. Punto de Drenaje</h4>
+              <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4"><div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center shrink-0 text-xl sm:text-2xl font-black shadow-inner">🚰</div><h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">3. Punto de Drenaje</h4></div>
               <p className="text-slate-600 text-sm leading-relaxed">
                 Disponer de un desagüe, alcantarillado, drenaje o canal cercano para desechar de manera ordenada y limpia el agua sucia y lodos extraídos del fondo.
               </p>
