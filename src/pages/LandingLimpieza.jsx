@@ -471,8 +471,8 @@ export function LandingLimpieza() {
             </div>
 
             {/* Conjuntos Residenciales */}
-            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-2xl shadow-sky-900/30 relative overflow-hidden flex flex-col transform md:-translate-y-4 md:scale-105 z-10 h-full">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10"></div>
+            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-xl hover:shadow-2xl shadow-sky-900/30 transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1 h-full">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
               <div className="absolute top-5 right-5 text-[10px] font-black bg-amber-400 text-amber-950 px-3 py-1.5 rounded-full uppercase tracking-widest shadow-md">
                 Más Solicitado
               </div>
