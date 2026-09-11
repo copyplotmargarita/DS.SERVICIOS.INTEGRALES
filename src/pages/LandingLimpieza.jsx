@@ -47,7 +47,8 @@ export function LandingLimpieza() {
     tankSubText = "Conjunto Residencial / Capacidad Mayor";
   }
 
-  const baseText = `¡Hola! Deseo cotizar la limpieza de mi tanque subterráneo en la Isla de Margarita. Mi tanque es de aprox. ${formatNumber(liters)} litros. El monto estimado en la web es de $${grandTotal} USD.`;
+  const truckText = wantsTruck ? ` Adicionalmente, solicito un camión de agua dulce de ${truckCapacity === "25" ? "5.000 L" : "10.000 L"}.` : "";
+  const baseText = `¡Hola! Deseo cotizar la limpieza de mi tanque subterráneo en la Isla de Margarita. Mi tanque es de aprox. ${formatNumber(liters)} litros.${truckText} El monto estimado en la web es de $${grandTotal} USD.`;
   const encodedText = encodeURIComponent(baseText);
   const whatsappLink = `https://wa.me/584122138418?text=${encodedText}`;
 
@@ -284,7 +285,7 @@ export function LandingLimpieza() {
           {/* Controls */}
           <div className="lg:col-span-8 flex flex-col justify-between space-y-8">
             <div className="space-y-4">
-              <div className="flex justify-between items-center">
+              <div className="hidden sm:flex justify-between items-center">
                 <label htmlFor="tankSlider" className="text-base font-bold text-slate-900 flex items-center gap-2">
                   <span className="w-6 h-6 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center text-xs font-black">1</span>
                   Selecciona los litros de tu tanque:
@@ -306,26 +307,28 @@ export function LandingLimpieza() {
                   className="w-full custom-range appearance-none bg-transparent" 
                 />
                 <div className="flex justify-between text-xs font-semibold text-slate-400 mt-2 font-mono">
-                  <span>1.000 L (Mín.)</span>
-                  <span>5.000 L</span>
-                  <span>10.000 L</span>
-                  <span>15.000 L</span>
-                  <span>20.000 L +</span>
+                  <span className="hidden sm:inline">1.000 L (Mín.)</span><span className="sm:hidden">1k</span>
+                  <span className="hidden sm:inline">5.000 L</span><span className="sm:hidden">5k</span>
+                  <span className="hidden sm:inline">10.000 L</span><span className="sm:hidden">10k</span>
+                  <span className="hidden sm:inline">15.000 L</span><span className="sm:hidden">15k</span>
+                  <span className="hidden sm:inline">20.000 L +</span><span className="sm:hidden">20k+</span>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-1">
-                <span className="text-xs font-medium text-slate-500 self-center mr-1">Comunes:</span>
-                {[3000, 5000, 10000, 15000, 20000].map(val => (
-                  <button 
-                    key={val}
-                    type="button" 
-                    onClick={() => setLiters(val)}
-                    className={`text-xs font-semibold px-3 py-1 rounded-full transition ${liters === val ? 'border border-sky-500 bg-sky-50 text-sky-700' : 'border border-slate-200 hover:border-sky-400 hover:bg-sky-50 text-slate-600'}`}
-                  >
-                    {formatNumber(val)} L{val === 20000 ? '+' : ''}
-                  </button>
-                ))}
+              <div className="pt-1">
+                <span className="text-xs font-medium text-slate-500 block mb-2 sm:inline sm:mb-0 sm:mr-3 text-center sm:text-left">Comunes:</span>
+                <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
+                  {[3000, 5000, 10000, 20000].map(val => (
+                    <button 
+                      key={val}
+                      type="button" 
+                      onClick={() => setLiters(val)}
+                      className={`text-xs font-semibold px-3 py-1.5 sm:py-1 rounded-full transition ${liters === val ? 'border border-sky-500 bg-sky-50 text-sky-700 shadow-sm' : 'border border-slate-200 hover:border-sky-400 hover:bg-sky-50 text-slate-600 bg-white'}`}
+                    >
+                      {formatNumber(val)} L{val === 20000 ? '+' : ''}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
