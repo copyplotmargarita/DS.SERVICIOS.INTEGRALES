@@ -430,6 +430,79 @@ export function LandingLimpieza() {
         </div>
       </section>
 
+
+      {/* PLANES Y SERVICIOS */}
+      <section className="py-16 sm:py-24 bg-[#F8FAFC] border-t border-slate-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs font-bold text-sky-600 uppercase tracking-widest bg-sky-100 px-3 py-1.5 rounded-full border border-sky-200 shadow-sm">
+              Planes a Medida
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 mt-5 mb-4 tracking-tight">
+              Soluciones Integrales por Sector
+            </h2>
+            <p className="text-slate-600 text-base sm:text-lg">
+              Adaptamos nuestros servicios de limpieza, desinfección y suministro de agua a las necesidades específicas de tu infraestructura.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            {/* Viviendas y Posadas */}
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-sky-50 rounded-bl-[100px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+              <div className="w-16 h-16 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center mb-6 shadow-inner border border-sky-200">
+                <span className="material-symbols-outlined text-3xl">home</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Viviendas y Posadas</h3>
+              <p className="text-slate-600 mb-8 flex-1 leading-relaxed">
+                Servicio rápido y eficiente diseñado para garantizar agua 100% pura y segura. Incluye vaciado, cepillado profundo, desinfección total y llenado inmediato con camión cisterna.
+              </p>
+              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Viviendas%20y%20Posadas." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-slate-900 text-white font-bold hover:bg-sky-600 transition-colors shadow-md">
+                <span>Solicitar Visita</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+
+            {/* Conjuntos Residenciales */}
+            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-2xl shadow-sky-900/30 relative overflow-hidden flex flex-col transform md:-translate-y-4 scale-100 md:scale-105 z-10">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10"></div>
+              <div className="absolute top-5 right-5 text-[10px] font-black bg-amber-400 text-amber-950 px-3 py-1.5 rounded-full uppercase tracking-widest shadow-md">
+                Más Solicitado
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-white/20 text-white flex items-center justify-center mb-6 shadow-inner backdrop-blur-sm border border-white/30">
+                <span className="material-symbols-outlined text-3xl">domain</span>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">Conjuntos y Edificios</h3>
+              <p className="text-sky-100 mb-8 flex-1 leading-relaxed">
+                Atención especializada para condominios. Coordinación logística para minimizar el tiempo sin agua, desinfección de alto nivel y múltiples camiones cisternas para surtido continuo.
+              </p>
+              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Conjuntos%20Residenciales%20y%20Edificios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-xl">
+                <span>Solicitar Visita</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+
+            {/* Hoteles y Comercios */}
+            <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-[100px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+              <div className="w-16 h-16 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center mb-6 shadow-inner border border-slate-200">
+                <span className="material-symbols-outlined text-3xl">storefront</span>
+              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-4">Hoteles y Comercios</h3>
+              <p className="text-slate-600 mb-8 flex-1 leading-relaxed">
+                Servicio corporativo en horarios flexibles para no afectar la operatividad de tu negocio. Certificación sanitaria y suministro masivo de agua dulce garantizada.
+              </p>
+              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Hoteles%20y%20Comercios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-slate-900 text-white font-bold hover:bg-sky-600 transition-colors shadow-md">
+                <span>Solicitar Visita</span>
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* SERVICIO ADICIONAL */}
       <section className="py-12 bg-white border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
