@@ -339,11 +339,11 @@ export function LandingLimpieza() {
                   className="mt-1 w-5 h-5 text-sky-600 rounded border-slate-300 focus:ring-sky-500 cursor-pointer" 
                 />
                 <div className="flex-1">
-                  <label htmlFor="truckCheckbox" className="font-bold text-slate-900 text-sm sm:text-base cursor-pointer flex items-center gap-2">
-                    <span>¿Desea un camión de agua nueva y limpia para surtir el tanque al terminar?</span>
-                    <span className="text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded-full">Recomendado</span>
+                  <label htmlFor="truckCheckbox" className="font-bold text-slate-900 text-sm sm:text-base cursor-pointer block leading-snug">
+                    ¿Desea un camión de agua nueva y limpia para surtir el tanque al terminar?
+                    <span className="inline-block mt-1.5 sm:mt-0 sm:ml-2 align-middle text-[10px] sm:text-xs bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide">Recomendado</span>
                   </label>
-                  <p className="text-xs text-slate-500 mt-1">
+                  <p className="text-xs text-slate-500 mt-2 sm:mt-1">
                     Llegamos con agua dulce potable garantizada para dejar su sistema 100% operativo inmediatamente tras la desinfección.
                   </p>
 
@@ -402,9 +402,9 @@ export function LandingLimpieza() {
                     <span className="font-mono font-bold text-slate-200">+${truckPrice}</span>
                   </div>
                 )}
-                <div className="pt-2 border-t border-slate-800 flex items-baseline justify-between md:justify-start gap-4">
+                <div className="pt-4 mt-2 sm:pt-2 sm:mt-0 border-t border-slate-700 sm:border-slate-800 flex flex-col sm:flex-row items-center sm:items-baseline justify-between md:justify-start gap-1 sm:gap-4">
                   <span className="text-sm font-bold text-slate-300 uppercase tracking-wider">Total Estimado:</span>
-                  <div className="text-3xl font-black font-mono text-cyan-400">${grandTotal} <span className="text-xs font-sans text-slate-400 font-normal">USD</span></div>
+                  <div className="text-4xl sm:text-3xl font-black font-mono text-cyan-400 mt-1 sm:mt-0">${grandTotal} <span className="text-sm sm:text-xs font-sans text-slate-400 font-normal ml-1 sm:ml-0">USD</span></div>
                 </div>
                 {liters >= 20000 && (
                   <p className="text-[11px] text-amber-300/90 leading-tight max-w-sm mt-1">
