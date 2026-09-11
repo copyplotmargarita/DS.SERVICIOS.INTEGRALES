@@ -446,11 +446,11 @@ export function LandingLimpieza() {
             </p>
           </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
             
             {/* Viviendas y Posadas */}
-            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-xl hover:shadow-2xl shadow-sky-900/20 transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+            <div className="bg-gradient-to-b from-emerald-500 to-emerald-600 rounded-3xl p-8 sm:p-10 border border-emerald-400 shadow-xl hover:shadow-2xl shadow-emerald-900/20 transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1 h-full">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-400/50 rounded-bl-[120px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner backdrop-blur-sm border border-white/30">
@@ -459,17 +459,19 @@ export function LandingLimpieza() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">Viviendas y Posadas</h3>
               </div>
               
-              <p className="text-sky-100 mb-8 flex-1 leading-relaxed">
+              <p className="text-emerald-50 mb-8 flex-1 leading-relaxed">
                 Servicio rápido y eficiente diseñado para garantizar agua 100% pura y segura. Incluye vaciado, cepillado profundo, desinfección total y llenado inmediato con camión cisterna.
               </p>
-              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Viviendas%20y%20Posadas." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg">
-                <span>Solicitar Visita</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+              <div className="mt-auto">
+                <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Viviendas%20y%20Posadas." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-emerald-900 font-bold hover:bg-emerald-50 transition-colors shadow-lg">
+                  <span>Solicitar Visita</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
             </div>
 
             {/* Conjuntos Residenciales */}
-            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-2xl shadow-sky-900/30 relative overflow-hidden flex flex-col transform md:-translate-y-4 scale-100 md:scale-105 z-10">
+            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-2xl shadow-sky-900/30 relative overflow-hidden flex flex-col transform md:-translate-y-4 md:scale-105 z-10 h-full">
               <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10"></div>
               <div className="absolute top-5 right-5 text-[10px] font-black bg-amber-400 text-amber-950 px-3 py-1.5 rounded-full uppercase tracking-widest shadow-md">
                 Más Solicitado
@@ -485,15 +487,17 @@ export function LandingLimpieza() {
               <p className="text-sky-100 mb-8 flex-1 leading-relaxed">
                 Atención especializada para condominios. Coordinación logística para minimizar el tiempo sin agua, desinfección de alto nivel y múltiples camiones cisternas para surtido continuo.
               </p>
-              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Conjuntos%20Residenciales%20y%20Edificios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-xl">
-                <span>Solicitar Visita</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+              <div className="mt-auto">
+                <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Conjuntos%20Residenciales%20y%20Edificios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-xl">
+                  <span>Solicitar Visita</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
             </div>
 
             {/* Hoteles y Comercios */}
-            <div className="bg-gradient-to-b from-sky-600 to-sky-700 rounded-3xl p-8 sm:p-10 border border-sky-500 shadow-xl hover:shadow-2xl shadow-sky-900/20 transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-sky-500/50 rounded-bl-[120px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
+            <div className="bg-gradient-to-b from-slate-700 to-slate-800 rounded-3xl p-8 sm:p-10 border border-slate-600 shadow-xl hover:shadow-2xl shadow-slate-900/30 transition-all duration-300 relative overflow-hidden flex flex-col group hover:-translate-y-1 h-full">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-slate-600/50 rounded-bl-[120px] -z-10 transition-transform duration-500 group-hover:scale-125"></div>
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner backdrop-blur-sm border border-white/30">
@@ -502,13 +506,15 @@ export function LandingLimpieza() {
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">Hoteles y Comercios</h3>
               </div>
               
-              <p className="text-sky-100 mb-8 flex-1 leading-relaxed">
+              <p className="text-slate-200 mb-8 flex-1 leading-relaxed">
                 Servicio corporativo en horarios flexibles para no afectar la operatividad de tu negocio. Certificación sanitaria y suministro masivo de agua dulce garantizada.
               </p>
-              <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Hoteles%20y%20Comercios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-lg">
-                <span>Solicitar Visita</span>
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+              <div className="mt-auto">
+                <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Hoteles%20y%20Comercios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg">
+                  <span>Solicitar Visita</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+              </div>
             </div>
 
           </div>
