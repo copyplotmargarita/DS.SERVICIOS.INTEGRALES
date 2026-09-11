@@ -519,7 +519,6 @@ export function LandingLimpieza() {
 
           </div>
         </div>
-        </div>
       </section>
 
       {/* SERVICIO ADICIONAL */}
