@@ -242,16 +242,9 @@ export function LandingLimpieza() {
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-xl shadow-slate-200/50 p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Visual Water Tank */}
-          <div className="lg:col-span-4 flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-sky-50/40 p-6 rounded-2xl border border-slate-200/80">
-            <div className="text-center mb-4">
-              <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Capacidad Seleccionada</span>
-              <div className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight text-sky-600">
-                {formatNumber(liters)} L
-              </div>
-              <span className="text-xs text-slate-500 font-medium">{tankSubText}</span>
-            </div>
-
-            <div className="relative w-44 sm:w-52 h-72 sm:h-80 bg-slate-100/90 rounded-[2.5rem] border-4 border-slate-700/80 p-2 shadow-inner flex flex-col justify-end overflow-hidden">
+          <div className="lg:col-span-4 flex flex-col items-center justify-center bg-gradient-to-b from-slate-50 to-sky-50/40 p-5 sm:p-6 rounded-2xl border border-slate-200/80">
+            
+            <div className="relative w-40 sm:w-52 h-56 sm:h-80 bg-slate-100/90 rounded-[2.5rem] border-4 border-slate-700/80 p-2 shadow-inner flex flex-col justify-end overflow-hidden">
               <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-16 h-3 bg-slate-600 rounded-b-md z-20"></div>
               <div className="absolute top-2 left-4 w-3 h-3 rounded-full bg-slate-300 border border-slate-400 z-20"></div>
               
@@ -272,8 +265,16 @@ export function LandingLimpieza() {
               </div>
             </div>
 
-            <div className="mt-4 flex items-center gap-1.5 text-xs text-slate-500">
-              <svg className="w-4 h-4 text-sky-500" fill="currentColor" viewBox="0 0 20 20">
+            <div className="text-center mt-6 mb-2">
+              <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Capacidad Seleccionada</span>
+              <div className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight text-sky-600">
+                {formatNumber(liters)} L
+              </div>
+              <span className="text-xs text-slate-500 font-medium">{tankSubText}</span>
+            </div>
+
+            <div className="mt-2 flex items-center gap-1.5 text-[10px] sm:text-xs text-slate-500 text-center max-w-[200px] sm:max-w-none">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-sky-500 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd"></path>
               </svg>
               <span>Calculado para tanques cilíndricos o rectangulares</span>
