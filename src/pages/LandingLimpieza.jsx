@@ -454,7 +454,7 @@ export function LandingLimpieza() {
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner backdrop-blur-sm border border-white/30">
-                  <span className="material-symbols-outlined text-3xl">home</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-3xl">home</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">Viviendas y Posadas</h3>
               </div>
@@ -465,7 +465,7 @@ export function LandingLimpieza() {
               <div className="mt-auto">
                 <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Viviendas%20y%20Posadas." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-emerald-900 font-bold hover:bg-emerald-50 transition-colors shadow-lg">
                   <span>Solicitar Visita</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-sm">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -479,7 +479,7 @@ export function LandingLimpieza() {
               
               <div className="flex items-center gap-4 mb-6 mt-4 sm:mt-0">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner backdrop-blur-sm border border-white/30">
-                  <span className="material-symbols-outlined text-3xl">domain</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-3xl">domain</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">Conjuntos y Edificios</h3>
               </div>
@@ -490,7 +490,7 @@ export function LandingLimpieza() {
               <div className="mt-auto">
                 <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Conjuntos%20Residenciales%20y%20Edificios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-sky-900 font-bold hover:bg-sky-50 transition-colors shadow-xl">
                   <span>Solicitar Visita</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-sm">arrow_forward</span>
                 </a>
               </div>
             </div>
@@ -501,7 +501,7 @@ export function LandingLimpieza() {
               
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center shrink-0 shadow-inner backdrop-blur-sm border border-white/30">
-                  <span className="material-symbols-outlined text-3xl">storefront</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-3xl">storefront</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">Hoteles y Comercios</h3>
               </div>
@@ -512,7 +512,7 @@ export function LandingLimpieza() {
               <div className="mt-auto">
                 <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20solicitar%20una%20visita%20para%20presupuestar%20el%20plan%20de%20Hoteles%20y%20Comercios." target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 w-full px-6 py-4 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg">
                   <span>Solicitar Visita</span>
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <span translate="no" className="material-symbols-outlined notranslate text-sm">arrow_forward</span>
                 </a>
               </div>
             </div>
