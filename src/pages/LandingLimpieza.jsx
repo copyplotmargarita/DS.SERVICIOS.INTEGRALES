@@ -134,19 +134,19 @@ export function LandingLimpieza() {
 
       {/* TOP BAR & HEADER */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-shadow duration-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-2 sm:py-3">
           
           <a href="#" className="flex items-center gap-3 group">
-            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqux5GrD6QuiHYE3jKAALBPpM2ts4SYz6-Dz1TRL5OC3bD5ZqR_zZCEKMF3fdSC88KFfI-p_sKfmg_DcwzBORmB0_TaU6PJ4IwC6RO7TisuRKUNjKzIplt19yJxwN1nqT2Rdox8qh8szNrluaTKtOB7qFh3AZgzGS-yRCfwTixdor0kOEYxIA_RVdiZGEANXXwuXLiltGIgMX1CuxyR0E3-D4RX-nml1V1x1RXmOxF-sjVil0scEwF2lEycf4x9Ef3Z1E" alt="DS Servicios Integrales" className="w-auto object-contain transition-transform group-hover:scale-105 duration-200" style={{height: '140px', maxHeight: '145px', objectFit: 'contain', transform: 'scale(1.15)', transformOrigin: 'left center'}} />
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqux5GrD6QuiHYE3jKAALBPpM2ts4SYz6-Dz1TRL5OC3bD5ZqR_zZCEKMF3fdSC88KFfI-p_sKfmg_DcwzBORmB0_TaU6PJ4IwC6RO7TisuRKUNjKzIplt19yJxwN1nqT2Rdox8qh8szNrluaTKtOB7qFh3AZgzGS-yRCfwTixdor0kOEYxIA_RVdiZGEANXXwuXLiltGIgMX1CuxyR0E3-D4RX-nml1V1x1RXmOxF-sjVil0scEwF2lEycf4x9Ef3Z1E" alt="DS Servicios Integrales" className="h-16 sm:h-20 md:h-24 lg:h-[120px] w-auto object-contain transition-transform group-hover:scale-105 duration-200" />
           </a>
 
-          <div className="flex items-center gap-3 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <div className="hidden md:flex flex-col text-right">
               <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Atención Inmediata</span>
               <span className="text-sm font-bold text-slate-900 font-mono">+58 412-2138418</span>
             </div>
-            <a href="tel:+584122138418" className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-md hover:shadow-lg transition-all transform active:scale-95">
-              <svg className="w-4 h-4 text-cyan-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <a href="tel:+584122138418" className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 shadow-md hover:shadow-lg transition-all transform active:scale-95">
+              <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
               <span className="hidden sm:inline">Llamar Ahora</span>
