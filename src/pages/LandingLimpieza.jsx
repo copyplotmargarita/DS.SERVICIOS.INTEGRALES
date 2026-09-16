@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import tanqueImg from '../assets/tanque.png';
 export function LandingLimpieza() {
-  const [liters, setLiters] = useState(5000);
+  const [liters, setLiters] = useState(8000);
   const [wantsTruck, setWantsTruck] = useState(false);
   const [truckCapacity, setTruckCapacity] = useState("50"); // "50" for 10000L, "150" for 40000L
   
@@ -33,7 +33,7 @@ export function LandingLimpieza() {
   const truckPrice = wantsTruck ? parseInt(truckCapacity, 10) : 0;
   const grandTotal = cleaningPrice === "Consultar" ? "Consultar" : cleaningPrice + truckPrice;
 
-  const percentage = 12 + ((liters - 1000) / (20000 - 1000)) * 78;
+  const percentage = 12 + ((Math.min(liters, 25000) - 8000) / (25000 - 8000)) * 78;
 
   let tankSubText = "";
   if (liters <= 4000) {
@@ -310,26 +310,25 @@ export function LandingLimpieza() {
                 <input 
                   type="range" 
                   id="tankSlider" 
-                  min="1000" 
-                  max="25000" 
+                  min="8000" 
+                  max="20000" 
                   step="1000" 
                   value={liters} 
                   onChange={(e) => setLiters(Number(e.target.value))}
-                  className="w-full custom-range appearance-none bg-transparent" 
+                  className="w-full custom-range appearance-none bg-transparent relative z-10" 
                 />
-                <div className="flex justify-between text-xs font-semibold text-slate-400 mt-2 font-mono">
-                  <span className="hidden sm:inline">1.000 L (Mín.)</span><span className="sm:hidden">1k</span>
-                  <span className="hidden sm:inline">5.000 L</span><span className="sm:hidden">5k</span>
-                  <span className="hidden sm:inline">10.000 L</span><span className="sm:hidden">10k</span>
-                  <span className="hidden sm:inline">15.000 L</span><span className="sm:hidden">15k</span>
-                  <span className="hidden sm:inline">20.000 L +</span><span className="sm:hidden">20k+</span>
+                <div className="relative h-4 mt-3 mb-1 text-[11px] sm:text-xs font-semibold text-slate-400 font-mono">
+                  <span className="absolute left-[0%]"><span className="hidden sm:inline">8.000 L</span><span className="sm:hidden">8k</span></span>
+                  <span className="absolute left-[16.66%] -translate-x-1/2"><span className="hidden sm:inline">10.000 L</span><span className="sm:hidden">10k</span></span>
+                  <span className="absolute left-[58.33%] -translate-x-1/2"><span className="hidden sm:inline">15.000 L</span><span className="sm:hidden">15k</span></span>
+                  <span className="absolute right-[0%]"><span className="hidden sm:inline">20.000 L +</span><span className="sm:hidden">20k+</span></span>
                 </div>
               </div>
 
               <div className="pt-1">
                 <span className="text-xs font-medium text-slate-500 block mb-2 sm:inline sm:mb-0 sm:mr-3 text-center sm:text-left">Comunes:</span>
                 <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
-                  {[5000, 8000, 10000, 25000].map(val => (
+                  {[8000, 10000, 15000, 25000].map(val => (
                     <button 
                       key={val}
                       type="button" 
