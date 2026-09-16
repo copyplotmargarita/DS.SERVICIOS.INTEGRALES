@@ -1,9 +1,9 @@
 import React, { useState, useMemo } from 'react';
-
+import tanqueImg from '../assets/tanque.png';
 export function LandingLimpieza() {
   const [liters, setLiters] = useState(5000);
   const [wantsTruck, setWantsTruck] = useState(false);
-  const [truckCapacity, setTruckCapacity] = useState("25"); // "25" for 5000L, "35" for 10000L
+  const [truckCapacity, setTruckCapacity] = useState("50"); // "50" for 10000L, "150" for 40000L
   
   const [faqOpen, setFaqOpen] = useState({
     faq1: false,
@@ -25,14 +25,13 @@ export function LandingLimpieza() {
 
   // Logic rules from code.html
   const cleaningPrice = useMemo(() => {
-    if (liters < 5000) return 60;
-    if (liters >= 5000 && liters <= 9000) return (liters / 1000) * 12;
-    if (liters >= 10000 && liters <= 19000) return (liters / 1000) * 10;
-    return 160;
+    if (liters > 20000) return "Consultar";
+    if (liters < 10000) return (liters / 1000) * 8;
+    return (liters / 1000) * 7;
   }, [liters]);
 
   const truckPrice = wantsTruck ? parseInt(truckCapacity, 10) : 0;
-  const grandTotal = cleaningPrice + truckPrice;
+  const grandTotal = cleaningPrice === "Consultar" ? "Consultar" : cleaningPrice + truckPrice;
 
   const percentage = 12 + ((liters - 1000) / (20000 - 1000)) * 78;
 
@@ -47,8 +46,8 @@ export function LandingLimpieza() {
     tankSubText = "Conjunto Residencial / Capacidad Mayor";
   }
 
-  const truckText = wantsTruck ? ` Adicionalmente, solicito un camión de agua dulce de ${truckCapacity === "25" ? "5.000 L" : "10.000 L"}.` : "";
-  const baseText = `¡Hola! Deseo cotizar la limpieza de mi tanque subterráneo en la Isla de Margarita. Mi tanque es de aprox. ${formatNumber(liters)} litros.${truckText} El monto estimado en la web es de $${grandTotal} USD.`;
+  const truckText = wantsTruck ? ` Adicionalmente, solicito un camión de agua dulce de ${truckCapacity === "50" ? "10.000 L" : "40.000 L"}.` : "";
+  const baseText = `¡Hola! Deseo cotizar la limpieza de mi tanque subterráneo en la Isla de Margarita. Mi tanque es de aprox. ${liters > 20000 ? '+20.000' : formatNumber(liters)} litros.${truckText} ${grandTotal !== 'Consultar' ? 'El monto estimado en la web es de $' + grandTotal + ' USD.' : 'Requiero consultar el precio.'}`;
   const encodedText = encodeURIComponent(baseText);
   const whatsappLink = `https://wa.me/584122138418?text=${encodedText}`;
 
@@ -169,12 +168,7 @@ export function LandingLimpieza() {
         <div className="absolute inset-0 pointer-events-none opacity-40 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px]"></div>
         
         <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-100 border border-sky-200/80 text-sky-800 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-sky-500"></span>
-            Especialistas Certificados en Saneamiento Hídrico
-          </div>
-
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6 mt-8">
             Agua pura y segura para tu familia.
             <span className="block mt-2 bg-gradient-to-r from-sky-600 via-cyan-600 to-sky-800 bg-clip-text text-transparent">
               Limpieza profesional de tanques subterráneos
@@ -183,7 +177,7 @@ export function LandingLimpieza() {
           </h1>
 
           <p className="max-w-2xl mx-auto text-base sm:text-xl text-slate-600 font-normal leading-relaxed mb-10">
-            Servicio rápido, higiénico y 100% garantizado en toda la isla sin recargos. Eliminamos lodos, bacterias y sedimentos para devolverle la pureza a tu hogar o comercio.
+            Servicio rápido, higiénico y 100% garantizado en toda la isla. Eliminamos lodos y sedimentos para devolverle la pureza a tu hogar o comercio.
           </p>
 
           {/* Trust Badges Strip */}
@@ -222,6 +216,23 @@ export function LandingLimpieza() {
                 <p className="text-sm font-bold text-slate-800">Equipos Especializados</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CÓMO CALCULAR */}
+      <section className="pt-12 pb-4 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+          <div className="w-full md:w-1/3 flex justify-center">
+            <img src={tanqueImg} alt="Esquema para calcular capacidad de tanque" className="w-full max-w-[280px] h-auto mx-auto object-contain" />
+          </div>
+          <div className="w-full md:w-2/3">
+            <h3 className="text-xl font-bold text-slate-900 mb-2">¿Cómo calcular la capacidad de tu tanque?</h3>
+            <p className="text-slate-600 mb-3 text-sm sm:text-base">Es muy sencillo. Solo necesitas medir las dimensiones internas de tu tanque en metros y multiplicarlas:</p>
+            <div className="bg-sky-50 text-sky-800 font-mono font-bold text-[11px] min-[375px]:text-xs sm:text-sm md:text-base px-2 py-2.5 sm:p-3 rounded-lg inline-block border border-sky-100 shadow-inner whitespace-nowrap">
+              Largo × Ancho × Altura × 1000 = Litros
+            </div>
+            <p className="text-slate-500 mt-3 text-xs sm:text-sm">Ejemplo: 2m × 2m × 1.5m = 6m³ × 1000 = <strong>6.000 Litros</strong></p>
           </div>
         </div>
       </section>
@@ -269,7 +280,7 @@ export function LandingLimpieza() {
             <div className="text-center mt-6 mb-2">
               <span className="text-xs font-bold uppercase text-slate-400 tracking-wider">Capacidad Seleccionada</span>
               <div className="text-3xl sm:text-4xl font-black text-slate-900 font-mono tracking-tight text-sky-600">
-                {formatNumber(liters)} L
+                {liters > 20000 ? '+20.000' : formatNumber(liters)} L
               </div>
               <span className="text-xs text-slate-500 font-medium">{tankSubText}</span>
             </div>
@@ -300,7 +311,7 @@ export function LandingLimpieza() {
                   type="range" 
                   id="tankSlider" 
                   min="1000" 
-                  max="20000" 
+                  max="25000" 
                   step="1000" 
                   value={liters} 
                   onChange={(e) => setLiters(Number(e.target.value))}
@@ -318,14 +329,14 @@ export function LandingLimpieza() {
               <div className="pt-1">
                 <span className="text-xs font-medium text-slate-500 block mb-2 sm:inline sm:mb-0 sm:mr-3 text-center sm:text-left">Comunes:</span>
                 <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2">
-                  {[3000, 5000, 10000, 20000].map(val => (
+                  {[5000, 8000, 10000, 25000].map(val => (
                     <button 
                       key={val}
                       type="button" 
                       onClick={() => setLiters(val)}
                       className={`text-xs font-semibold px-3 py-1.5 sm:py-1 rounded-full transition ${liters === val ? 'border border-sky-500 bg-sky-50 text-sky-700 shadow-sm' : 'border border-slate-200 hover:border-sky-400 hover:bg-sky-50 text-slate-600 bg-white'}`}
                     >
-                      {formatNumber(val)} L{val === 20000 ? '+' : ''}
+                      {val === 25000 ? '+20.000 L' : `${formatNumber(val)} L`}
                     </button>
                   ))}
                 </div>
@@ -357,14 +368,14 @@ export function LandingLimpieza() {
                         <input 
                           type="radio" 
                           name="truckOption" 
-                          value="25" 
-                          checked={truckCapacity === "25"}
+                          value="50" 
+                          checked={truckCapacity === "50"}
                           onChange={(e) => setTruckCapacity(e.target.value)}
                           className="w-4 h-4 text-sky-600 focus:ring-sky-500" 
                         />
                         <div className="ml-3">
-                          <span className="block text-xs font-bold text-slate-900 group-hover:text-sky-700">Camión de 5.000 L</span>
-                          <span className="block text-xs font-extrabold text-sky-600">+$25 USD</span>
+                          <span className="block text-xs font-bold text-slate-900 group-hover:text-sky-700">Camión de 10.000 L</span>
+                          <span className="block text-xs font-extrabold text-sky-600">+$50 USD</span>
                         </div>
                       </label>
 
@@ -372,14 +383,14 @@ export function LandingLimpieza() {
                         <input 
                           type="radio" 
                           name="truckOption" 
-                          value="35" 
-                          checked={truckCapacity === "35"}
+                          value="150" 
+                          checked={truckCapacity === "150"}
                           onChange={(e) => setTruckCapacity(e.target.value)}
                           className="w-4 h-4 text-sky-600 focus:ring-sky-500" 
                         />
                         <div className="ml-3">
-                          <span className="block text-xs font-bold text-slate-900 group-hover:text-sky-700">Camión de 10.000 L</span>
-                          <span className="block text-xs font-extrabold text-sky-600">+$35 USD</span>
+                          <span className="block text-xs font-bold text-slate-900 group-hover:text-sky-700">Camión de 40.000 L</span>
+                          <span className="block text-xs font-extrabold text-sky-600">+$150 USD</span>
                         </div>
                       </label>
                     </div>
@@ -398,7 +409,7 @@ export function LandingLimpieza() {
               <div className="w-full md:w-auto space-y-1.5 text-center md:text-left">
                 <div className="flex justify-between md:justify-start gap-4 text-xs text-slate-400">
                   <span>Limpieza Profunda:</span>
-                  <span className="font-mono font-bold text-slate-200">${cleaningPrice}</span>
+                  <span className="font-mono font-bold text-slate-200">{cleaningPrice === "Consultar" ? "Consultar" : `$${cleaningPrice}`}</span>
                 </div>
                 {wantsTruck && (
                   <div className="flex justify-between md:justify-start gap-4 text-xs text-slate-400">
@@ -408,7 +419,7 @@ export function LandingLimpieza() {
                 )}
                 <div className="pt-4 mt-2 sm:pt-2 sm:mt-0 border-t border-slate-700 sm:border-slate-800 flex flex-col sm:flex-row items-center sm:items-baseline justify-between md:justify-start gap-1 sm:gap-4">
                   <span className="text-sm font-bold text-slate-300 uppercase tracking-wider">Total Estimado:</span>
-                  <div className="text-4xl sm:text-3xl font-black font-mono text-cyan-400 mt-1 sm:mt-0">${grandTotal} <span className="text-sm sm:text-xs font-sans text-slate-400 font-normal ml-1 sm:ml-0">USD</span></div>
+                  <div className="text-4xl sm:text-3xl font-black font-mono text-cyan-400 mt-1 sm:mt-0">{grandTotal === "Consultar" ? "Consultar" : `$${grandTotal}`} {grandTotal !== "Consultar" && <span className="text-sm sm:text-xs font-sans text-slate-400 font-normal ml-1 sm:ml-0">USD</span>}</div>
                 </div>
                 {liters >= 20000 && (
                   <p className="text-[11px] text-amber-300/90 leading-tight max-w-sm mt-1">
@@ -521,54 +532,6 @@ export function LandingLimpieza() {
         </div>
       </section>
 
-      {/* SERVICIO ADICIONAL */}
-      <section className="py-12 bg-white border-y border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-sky-950 to-slate-900 p-8 sm:p-12 text-white shadow-xl">
-            <div className="absolute -right-10 -bottom-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="max-w-2xl">
-                <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-3">
-                  Servicio Especializado de Recuperación de Agua
-                </h3>
-                <p className="text-slate-300 text-base leading-relaxed">
-                  Ideal para cuando su tanque ha sido surtido con agua sucia, turbia o de pozo profundo. Mediante floculación, filtración y tratamiento químico controlado, tratamos y recuperamos su agua sin necesidad de botarla.
-                </p>
-              </div>
-              <div className="shrink-0 w-full lg:w-auto">
-                <a href="https://wa.me/584122138418?text=%C2%A1Hola!%20Deseo%20coordinar%20una%20visita%20para%20el%20servicio%20de%20recuperaci%C3%B3n%20de%20agua%20en%20mi%20tanque." target="_blank" rel="noreferrer" className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-base font-bold text-slate-900 bg-cyan-400 hover:bg-cyan-300 transition-all shadow-lg shadow-cyan-400/25 active:scale-95">
-                  <svg className="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                  </svg>
-                  <span>Solicitar Visita para Evaluación</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCTOS Y SALUD ECOLÓGICA */}
-      <section className="py-12 bg-[#F8FAFC]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-6 sm:p-8 rounded-3xl bg-emerald-50/70 border-2 border-emerald-200/80 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
-            <div className="w-16 h-16 rounded-2xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-500/30">
-              <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <div>
-              <h4 className="text-lg sm:text-xl font-extrabold text-emerald-950 mb-1 flex items-center gap-2">
-                Compromiso con la Salud y el Medio Ambiente
-                <span className="text-xs bg-emerald-200 text-emerald-900 font-bold px-2 py-0.5 rounded-full">Grado Alimenticio</span>
-              </h4>
-              <p className="text-emerald-900/80 text-sm sm:text-base leading-relaxed">
-                Utilizamos productos <strong>100% biodegradables y no tóxicos</strong>. Garantizamos un proceso riguroso y seguro que no altera la salud de tu familia ni modifica el sabor u olor natural del agua.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CONDICIONES Y REQUISITOS DEL SERVICIO */}
       <section className="py-16 bg-white border-t border-slate-200/80">
@@ -588,7 +551,7 @@ export function LandingLimpieza() {
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-sky-300 transition-all shadow-sm hover:shadow-md">
               <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4"><div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0 text-xl sm:text-2xl font-black shadow-inner">⚡</div><h4 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">1. Punto de Electricidad</h4></div>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Contar con una toma eléctrica cercana y funcional disponible (110V o 220V) para conectar nuestras bombas de achique, hidrolavadoras y extractores de lodos.
+                Contar con una toma eléctrica cercana y funcional disponible (110V) para conectar nuestras bombas de achique, hidrolavadoras y extractores de lodos.
               </p>
             </div>
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200/90 hover:border-sky-300 transition-all shadow-sm hover:shadow-md">
@@ -660,19 +623,6 @@ export function LandingLimpieza() {
               )}
             </div>
 
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-              <button type="button" onClick={() => toggleFaq('faq4')} className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 hover:text-sky-600 transition">
-                <span className="text-base sm:text-lg">¿Los productos que usan dejan olor o sabor en el agua?</span>
-                <svg className={`w-5 h-5 text-slate-400 transition-transform duration-200 ${faqOpen.faq4 ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              {faqOpen.faq4 && (
-                <div className="px-6 pb-5 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100 pt-3">
-                  <strong>Para nada.</strong> Todos nuestros desinfectantes son 100% biodegradables, grado alimenticio y sanitarios, totalmente seguros para el consumo humano y diseñados para no dejar residuales tóxicos ni alterar el sabor u olor del agua potable.
-                </div>
-              )}
-            </div>
 
           </div>
         </div>
